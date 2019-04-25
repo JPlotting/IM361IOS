@@ -8,11 +8,21 @@
 
 import UIKit
 
+struct Article {
+    let title: String
+    let author: String
+    let date: Date
+    let body: String
+}
+
 class ViewController: UIViewController {
 
+    @IBOutlet weak var ClickMeButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        title = "Some title"
     }
 
 
