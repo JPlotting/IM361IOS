@@ -17,14 +17,34 @@ struct Article {
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var ClickMeButton: UIButton!
+    @IBOutlet weak var viewToggle: UISwitch!
+    var isSequeAllowed = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
         title = "Some title"
     }
 
-
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        switch identifier {
+        case "articleView":
+            if isSequeAllowed {
+                print("Now viewing the article!")
+                return true
+            } else {
+                print("Toggle switch should be active first!")
+                return false
+            }
+        default:
+            print("Why you no view the article?")
+            return true
+        }
+    }
+    
+    @IBAction func didPressSwitch(_ sender: Any) {
+        isSequeAllowed = !isSequeAllowed
+    }
 }
 
