@@ -15,7 +15,7 @@ class ArticleViewController: UIViewController {
     }
     
     @IBAction func didPressGoBack(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func didPressViewAlerts(_ sender: Any) {

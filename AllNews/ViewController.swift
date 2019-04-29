@@ -8,13 +8,6 @@
 
 import UIKit
 
-struct Article {
-    let title: String
-    let author: String
-    let date: Date
-    let body: String
-}
-
 class ViewController: UIViewController {
 
     @IBOutlet weak var viewToggle: UISwitch!
@@ -23,28 +16,34 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
-        title = "Some title"
+        // Set title manually because the option under "view controller doesn't work?"
+        title = "Suggested Articles"
     }
 
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         switch identifier {
-        case "articleView":
-            if isSequeAllowed {
-                print("Now viewing the article!")
+        case "browseArticles":
+            if (isSequeAllowed) {
+                print("-Different Articles- are viewable!")
                 return true
             } else {
-                print("Toggle switch should be active first!")
+                print("-Suggested Articles- are under construction!")
                 return false
             }
         default:
-            print("Why you no view the article?")
+            print("Why you no view any articles?")
             return true
         }
     }
     
     @IBAction func didPressSwitch(_ sender: Any) {
         isSequeAllowed = !isSequeAllowed
+        
+        if (isSequeAllowed) {
+            title = "Different Articles"
+        } else {
+            title = "Suggested Articles"
+        }
     }
 }
 
