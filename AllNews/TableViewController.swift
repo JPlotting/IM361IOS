@@ -14,19 +14,20 @@ struct Article {
     let author: String
     let date: Date
     let body: String
+    let banner: UIImage
 }
 
 class TableViewController: UITableViewController {
     let data = [
-        Article(title: "Some Title", author: "Some Name", date: Date(), body: "Some Text"),
-        Article(title: "Some Title", author: "Some Name", date: Date(), body: "Some Text"),
-        Article(title: "Some Title", author: "Some Name", date: Date(), body: "Some Text"),
-        Article(title: "Some Title", author: "Some Name", date: Date(), body: "Some Text"),
-        Article(title: "Some Title", author: "Some Name", date: Date(), body: "Some Text"),
-        Article(title: "Some Title", author: "Some Name", date: Date(), body: "Some Text"),
-        Article(title: "Some Title", author: "Some Name", date: Date(), body: "Some Text"),
-        Article(title: "Some Title", author: "Some Name", date: Date(), body: "Some Text"),
-        Article(title: "Some Title", author: "Some Name", date: Date(), body: "Some Text")
+        Article(title: "Some Title", author: "Some Name", date: Date(), body: "Some Text", banner: #imageLiteral(resourceName: "example1")),
+        Article(title: "Some Title", author: "Some Name", date: Date(), body: "Some Text", banner: #imageLiteral(resourceName: "example1")),
+        Article(title: "Some Title", author: "Some Name", date: Date(), body: "Some Text", banner: #imageLiteral(resourceName: "example1")),
+        Article(title: "Some Title", author: "Some Name", date: Date(), body: "Some Text", banner: #imageLiteral(resourceName: "example1")),
+        Article(title: "Some Title", author: "Some Name", date: Date(), body: "Some Text", banner: #imageLiteral(resourceName: "example1")),
+        Article(title: "Some Title", author: "Some Name", date: Date(), body: "Some Text", banner: #imageLiteral(resourceName: "example1")),
+        Article(title: "Some Title", author: "Some Name", date: Date(), body: "Some Text", banner: #imageLiteral(resourceName: "example1")),
+        Article(title: "Some Title", author: "Some Name", date: Date(), body: "Some Text", banner: #imageLiteral(resourceName: "example1")),
+        Article(title: "Some Title", author: "Some Name", date: Date(), body: "Some Text", banner: #imageLiteral(resourceName: "example1"))
     ]
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -41,6 +42,7 @@ class TableViewController: UITableViewController {
         let article = data[indexPath.row]
         
         cell.articleThumbnail.titleLabel?.text = article.title
+        cell.BgImageView.image = article.banner
         
         return cell
     }
