@@ -30,6 +30,12 @@ class TableViewController: UITableViewController {
         Article(title: "Some Title", author: "Some Name", date: Date(), body: "Some Text", banner: #imageLiteral(resourceName: "example1"))
     ]
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        title = "jakob the snakob"
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
