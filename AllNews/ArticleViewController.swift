@@ -11,12 +11,13 @@ import UIKit
 
 
 // Public variable for the currently selected article so that tapping an article thumbnail can pass its data for the article via a button action
-var activeArticle = Article(title: "Some Title", author: "Some Name", date: Date(), body: "Some Text", banner: #imageLiteral(resourceName: "example1"))
+var activeArticle = Article(title: "Some Title", author: "Some Name", date: Date(), body: "Some Text", banner: #imageLiteral(resourceName: "example1"), theme: UIColor(named: "ColorPrimary1")!)
 
 // Controller for the selected article screen where a tapped article can be viewed
 class ArticleViewController: UIViewController {
     // All the various fields that need to be populated with the selected articles info
     @IBOutlet weak var ArticleBannerImage: UIImageView!
+    @IBOutlet weak var ArticleBannerDivider: UIImageView!
     @IBOutlet weak var ArticleTitleText: UILabel!
     @IBOutlet weak var ArticleAuthorName: UILabel!
     @IBOutlet weak var ArticleDate: UILabel!
@@ -35,7 +36,9 @@ class ArticleViewController: UIViewController {
         
         // Fill in the various fields on this screen with the data from the selected article
         ArticleTitleText.text = activeArticle.title
+        self.ArticleTitleText.textColor = activeArticle.theme
         ArticleBannerImage.image = activeArticle.banner
+        self.ArticleBannerDivider.backgroundColor = activeArticle.theme
         ArticleAuthorName.text = "By " + activeArticle.author
         ArticleDate.text = "Published " + formatter.string(from: activeArticle.date)
         ArticleBodyText.text = activeArticle.body

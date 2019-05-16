@@ -125,6 +125,7 @@
                     <navigationItem key="navigationItem" id="8X9-hh-G7A"/>
                     <connections>
                         <outlet property="ArticleAuthorName" destination="fXO-01-Nsa" id="typ-py-AhI"/>
+                        <outlet property="ArticleBannerDivider" destination="Efm-md-HAf" id="tSN-Ni-8xG"/>
                         <outlet property="ArticleBannerImage" destination="qYE-QA-y1A" id="s03-AT-xvr"/>
                         <outlet property="ArticleBodyText" destination="pP2-qW-pVW" id="WAY-qW-0ez"/>
                         <outlet property="ArticleDate" destination="6hF-lj-XK2" id="Oe6-6A-h6x"/>
@@ -381,7 +382,7 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Z3w-Bv-enu"/>
+        <segue reference="ibt-Uz-cl4"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="ColorForeground"/>
 </document>
